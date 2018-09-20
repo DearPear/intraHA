@@ -1,11 +1,16 @@
+// keep track of wether the widget menu and the profile are opened. Could be changed for a div data attribute.
 var WidgetVisibility = false;
 var ProfileVisibility = false;
+
 var TotalUpdates = "";
 var ShownAlerts = "";
-var lastScrollValue = 0;
+
+
+// lisOfStaff is comprised of an array of arrays. Each array represents a person and is built following the layout : [surname,name,position,pictureURL[,informations,...]]
 var listOfStaff = [[]];
+
+// lisOfAlerts is an array of arrays. each array is comprised of two strings following the layout : ["info"/"alert",textOfAlert]
 var listOfAlerts = [[]];
-var wontflicker = true;
 
 // var name for default form values MUST be Default + form ID.
 var DefaultHomeMobileNumber = "";
@@ -24,11 +29,12 @@ var formIDs = ["OfficeMobileNumber"];
 // add in array all profile form ID that does not allow modification.
 var fixedformIDs = ["HomeMobileNumber"];
 
+
 function SetPage() {
     //Feed informations to vars. Must be set by back-end somehow.
     setAlerts();
     FeedStaffList();
-    setPhoneAndAdress();
+    setPhoneAndAddress();
 
     //clean alerts
     EmptyOverflowUpdates();
@@ -95,6 +101,8 @@ function setEventListeners() {
     });
 }
 
+
+
 function FormsListeners(value) {
 
     document.getElementById(value).addEventListener('blur', function(evt) {
@@ -116,33 +124,38 @@ function FormsListeners(value) {
 
 }
 
+
 function setBehaviors() {
 
+    //Empty overflown updates. It automatically calls the function whenever the page is resized.
     EmptyOverflowUpdates();
 
 
     //Mobile number behavior. Prevent break lines, prevent adding more than 10 numbers (to be changed)
-    //prevents anything but numbers and '(' ')' '+' to be written.
+    //prevents anything but numbers to be written.
+    // As for now each phone field has to be added. It could be changed to an automatic addeventlistener onto each form ID that contains "MobileNumber". Beware that due to JS variable scopes you would need to enclose the addeventlisteners inside a function. JS is asyncronous.
     document.getElementById("HomeMobileNumber").addEventListener('keypress', function(evt) {
 
+        //prevents enter key to break line
         if (evt.which === 13) {
 
             evt.preventDefault();
             document.getElementById("HomeMobileNumber").blur();
 
-
+        //prevents writing more than 10 digits
         } else if (document.getElementById("HomeMobileNumber").textContent.trim().length >= 10 && evt.which !== 8 && evt.which !== 46 && evt.keyCode !== 46 && evt.keyCode !== 37 && evt.keyCode !== 38 && evt.keyCode !== 39 && evt.keyCode !== 40) {
 
 
             evt.preventDefault();
-        } else if (evt.which !== 48 && evt.which !== 49 && evt.which !== 50 && evt.which !== 51 && evt.which !== 52 && evt.which !== 53 && evt.which !== 54 && evt.which !== 55 && evt.which !== 56 && evt.which !== 57 && evt.which !== 8 && evt.keyCode !== 46 && evt.keyCode !== 37 && evt.keyCode !== 38 && evt.keyCode !== 39 && evt.keyCode !== 40) {
+            
+        // prevent writing unallowed characters
+        }else if (evt.which !== 48 && evt.which !== 49 && evt.which !== 50 && evt.which !== 51 && evt.which !== 52 && evt.which !== 53 && evt.which !== 54 && evt.which !== 55 && evt.which !== 56 && evt.which !== 57 && evt.which !== 8 && evt.keyCode !== 46 && evt.keyCode !== 37 && evt.keyCode !== 38 && evt.keyCode !== 39 && evt.keyCode !== 40) {
 
             evt.preventDefault();
 
         }
 
     });
-
 
     document.getElementById("OfficeMobileNumber").addEventListener('keypress', function(evt) {
 
@@ -168,6 +181,7 @@ function setBehaviors() {
 
 }
 
+// Still unfinished. setAlerts() should call a function that feeds listOfAlerts with the alerts. A function should also listen for any new updates while the person is on the website.
 function setAlerts() {
 
     listOfAlerts[0] = ["info", "Your profile changes have been validated"];
@@ -192,7 +206,8 @@ function setAlerts() {
 
 }
 
-function setPhoneAndAdress() {
+// Still unfinished. setPhoneAndAddress should call a function to feed the variables and forms with correct numbers and addresses. The addresses still have no variables. 
+function setPhoneAndAddress() {
     DefaultHomeMobileNumber = "8035847474";
     DefaultOfficeMobileNumber = "8038871148";
 
@@ -203,6 +218,7 @@ function setPhoneAndAdress() {
 }
 
 
+// check if a form has been edited
 function isThereAChangedForm() {
     var thereIsAChangedForm = false;
     formIDs.forEach(function(value) {
@@ -214,7 +230,7 @@ function isThereAChangedForm() {
     return thereIsAChangedForm;
 }
 
-
+// check if the form whose ID has been passed as a parameter has a valid input. As for now, it only works for phone numbers. TBC.
 function ValidateInput(ID) {
 
     //set to non editable
@@ -285,7 +301,7 @@ function ValidateInput(ID) {
 
 }
 
-
+//check if number is valid.
 function validateNumber(phone) {
     var validation = false;
 
@@ -301,7 +317,7 @@ function validateNumber(phone) {
 
 }
 
-
+// formats the phone number depending on its current form.
 function formatMobileNumber(phone) {
     var formatedPhone = "";
 
@@ -324,7 +340,7 @@ function formatMobileNumber(phone) {
 }
 
 
-
+// Show or hide checkmarks depending on if the form has valid data and if it has been edited.
 function CheckMarks() {
 
     formIDs.forEach(function(value) {
@@ -351,8 +367,9 @@ function CheckMarks() {
 
 
     });
-
+    
 }
+
 
 function loadDashboard() {
 
@@ -360,6 +377,8 @@ function loadDashboard() {
 
 }
 
+    
+// check which forms can be saved and call saveToServer with their ID. Removes checkmarks of correctly saved forms.
 function saveFormChanges(ID) {
 
     if (document.getElementById(ID).dataset.haschanged == "true" && document.getElementById(ID).dataset.valid == "false") {
@@ -404,6 +423,7 @@ function saveFormChanges(ID) {
 
 }
 
+    // TBD save the data to the server.
 function saveToServer(ID) {
 
 
@@ -432,8 +452,9 @@ function cancelAllFormChanges() {
 
 }
 
+    // formats the form. Still only works for phone numbers.
 function formatForm(ID) {
-
+// checks if the form ID contains "MobileNumber".
     if (ID.indexOf("MobileNumber") !== -1) {
 
         document.getElementById(ID).textContent = formatMobileNumber(document.getElementById(ID).textContent);
@@ -442,6 +463,7 @@ function formatForm(ID) {
 
 }
 
+    
 function cancelFormChanges(ID) {
 
     document.getElementById(ID).textContent = window["Default" + ID];
@@ -468,11 +490,11 @@ function cancelFormChanges(ID) {
     }
 
 }
-
+ // sets a mobileNumber form as editable and format it.
 function EditableMobileNumber(ID) {
 
     if (document.getElementById(ID).textContent.length > 10) {
-        document.getElementById(ID).textContent = document.getElementById(ID).textContent.substring(0, 3) + document.getElementById(ID).textContent.substring(4, 7) + document.getElementById(ID).textContent.substring(8, 12);
+        document.getElementById(ID).textContent = formatMobileNumber(document.getElementById(ID).textContent);
     }
     document.getElementById(ID).setAttribute("contenteditable", true);
     document.getElementById(ID).focus();
@@ -481,7 +503,7 @@ function EditableMobileNumber(ID) {
 
 }
 
-
+// Checks if content of an element overflows.
 function checkOverflow(el) {
 
     if (el.offsetHeight < el.scrollHeight) {
@@ -498,7 +520,7 @@ function checkOverflow(el) {
 }
 
 
-
+// empties overflown updates
 function EmptyOverflowUpdates() {
 
 
@@ -582,17 +604,21 @@ function ToggleProfile() {
 
 }
 
+    // TBD
 function UploadNewIDPhoto() {
 
 
 }
 
+// loads query string into element by ID. Usefull to load the main content layout (mystaff / dashboard especially )
 function loadFromStringInto(query, ID) {
 
 
     document.getElementById(ID).innerHTML = query;
 }
 
+    
+    // loads a file content into element by ID. Not used anymore. It used to load myStaff.html into maincontent when mystaff widget was clicked.
 function loadFromFileInto(url, ID) {
 
     var request = new XMLHttpRequest();
@@ -632,6 +658,7 @@ function FeedStaffList() {
 
 }
 
+    // add content to the mystaff page
 function FeedMyStaffContent() {
 
     for (i = 0; i < listOfStaff.length; i++) {
@@ -640,7 +667,7 @@ function FeedMyStaffContent() {
 
 
 
-
+        // adds the eventlisteners to show additional infos on persons.
         FeedMyStaffListenersCreator(i);
 
     }
@@ -677,7 +704,7 @@ function personClickedOnStaff(index) {
 }
 
 
-
+// called when allowing for to be edited.
 function placeCaretAtEnd(el) {
 
     if (typeof window.getSelection != "undefined" && typeof document.createRange != "undefined") {
@@ -694,3 +721,6 @@ function placeCaretAtEnd(el) {
         textRange.select();
     }
 }
+    
+
+    

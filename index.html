@@ -1,21 +1,23 @@
-<!–– Changing any Element ID should be reflected by the same change in the javascript mainJS.js . Events are bound to elements by ID. -->
+ <!-- Changing any Element ID should be reflected by the same change in the javascript mainJS.js . Events are bound to elements by ID. -->
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
+     <!-- Previous line forces the page to be seen in IE-11 compatible view instead of classic "compatibility view". Warning : nothing must be added before that line. Should the overall site tech be upgraded the line could need a change from "IE-11" to "edge". -->
     <link rel="stylesheet" type="text/css" href="mainCSS.css">
     <script src="./mainJS.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
+ <!-- SetPage JS function connects the JS to the HTML. It sets behaviors, eventlisteners and informations. -->
 <body onload="SetPage();">
 
-    <!–– Updates overlay. Opens with ShowUpdates(); and fills itself with '#Updates' content. Separate from page's flow (so any overflow would be hidden and non scrollable) ––>
+     <!--  Updates overlay. Opens with ShowUpdates(); and fills itself with '#Updates' content. Separate from page's flow (so any overflow would be hidden and non scrollable) -->
     <div class="UpdateOverlay hidden" id="UpdateOverlay"></div>
 
-    <!–– Header Div. Mainly a wrapper for its content ––>
+   <!--  Header Div. Mainly a wrapper for its content -->
     <div id="Top">
 
-        <!–– leftmost flexed div ––>
+        <!--  leftmost flexed div -->
         <div id="LeftInsideTop">
 
             <a href="./index.html"><img src="res/logo-button-final.svg" id="Logo" ></a>
@@ -23,7 +25,7 @@
 
         </div>
 
-        <!–– center flexed div ––>
+         <!-- center flexed div -->
         <div id="MiddleInsideTop">
 
 
@@ -34,21 +36,21 @@
 
         </div>
 
-        <!–– rightmost flexed div ––>
+         <!-- rightmost flexed div -->
         <div id="RightInsideTop">
 
 
-            <!–– Has a set height. Overflowing alerts are hidden. ––>
+            <!-- Has a set height. Overflowing alerts are hidden. -->
             <div class="Updates" id="Updates">
                 
             </div>
 
-            <!–– Show More div, when clicked opens the updates overlay ––>
+             <!-- Show More div, when clicked opens the updates overlay -->
             <div class="HeaderRightBottom">
 
 
                 <div id="More">More...</div>
-                <!–– Burger Button is in the flex flow. -–>
+                 <!-- Burger Button is in the flex flow. -->
                 <div id="BurgerButton"><img id="BurgerImage" src="res/BurgerButton.svg"></div>
 
             </div>
@@ -57,11 +59,11 @@
 
     </div>
 
-    <!–– End of Header div ––>
+    <!-- End of Header div -->
 
 
 
-    <!–– Profile overlay's div. Set before Widget's div so it doesn't move with Widget Menu's div's opening and closing. Move all the Profile overlay's code block after the Widget Menu's code block to have Profile overlay's div flow with the widget's div closing or opening ––>
+     <!-- Profile overlay's div. Set before Widget's div so it doesn't move with Widget Menu's div's opening and closing. Move all the Profile overlay's code block after the Widget Menu's code block to have Profile overlay's div flow with the widget's div closing or opening -->
     <div id="ProfileMenu" class="ProfileMenu ProfileHidden">
         <div id="MyProfileTitle" style="margin-right: 4rem;"><b>My Profile</b></div>
 
@@ -93,7 +95,8 @@
             <span class="ProfileCategory"><b>Office</b></span>
 
             <br><br>
-
+            
+ <!-- Form IDs follow some set rules. 1 - A phone number form ID ends with "MobileNumber" (while that is probably unnecessary, it could help reducing JS size if many phone forms are added), 2 - the edit button ID must be named "editButton" + the ID of the editable form. This allows automatic eventlistener binding in the JS. data-valid attribute keeps track on wether the form data is valid or not (for instance, phone numbers have 10 digits, anything else would be invalid). data-haschanged attribute keeps track on wether the form data is different from the stored form data (and therefore allows saving) -->
             <span class="Prefield">Phone </span><br>
             <div class="profileFormLayout">
 
@@ -120,7 +123,7 @@
                 </div>
 
                 <div class="profileFormRight">
-
+                     <!-- TBD, Address fields still non editable -->
                     <img id="CheckMarkOfficeAddress" class="ValidImage displayNone" src="res/valid.png"> <a href="#" class="editButton" id="editButtonOfficeAddress">edit</a>
                 </div>
             </div>
@@ -139,6 +142,7 @@
                     <br>
                     <span class="PhoneField" id="HomeMobileNumber" data-valid="true" data-haschanged="false" contenteditable=false></span>
                 </div>
+                 <!-- the "profileFormRight" div is needed for the layout, even if it has no content inside. -->
                 <div class="profileFormRight">
 
                 </div>
@@ -161,7 +165,7 @@
             </div>
 
             <br><br><br>
-
+            <!-- TBD, still not filled by JS -->
             <span class="ProfileCategory"><b>My HA equipment</b></span>
 
             <br><br> 1 Dell Optiplex 7010-HA 15043
@@ -172,9 +176,11 @@
 
     </div>
 
-    <!–– End of profile overlay ––>
+     <!-- End of profile overlay -->
 
-    <!–– Wiget Menu's div. Toggles display with "ToggleWidgetMenu();". Pushes next elements when opened. ––>
+     <!-- Wiget Menu's div. Toggles display with "ToggleWidgetMenu();". Pushes next elements when opened. -->
+    
+    <!-- TBD : Enclose img into <a> tags -->
 
     <div class="WidgetMenuContainer">
         <div class="WidgetMenu HideWidgetMenu" id="WidgetMenu">
@@ -194,18 +200,19 @@
 
         </div>
     </div>
-    <!–– End of Widget Menu div ––>
+    <!-- End of Widget Menu div -->
 
-    <!–– Main Content wrapper, ensures the page's flow ––>
+    <!-- Main Content wrapper, ensures the page's flow -->
 
     <div class="MainContentWrapper" id="MainContentWrapper">
 
 
     </div>
-    <!–– End of Main Content's wrapper ––>
+    <!-- End of Main Content's wrapper -->
 
 
-    <!–– Footer div. Currently set to bottom of body. Can have its position changed from absolute to fixed so it's always displayed at the bottom and never disappears. Its z-index is above every other divs. ––>
+   <!-- Footer div. Currently set fixed to bottom of body.  set whitespace to nowrap in CSS to prevent break lines when resizing window -->
+    
     <div class="footer">
         @ 2018 County of San Luis Obispo Health Agency. All Rights Reserved.
 
