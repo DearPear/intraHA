@@ -1,0 +1,214 @@
+<!–– Changing any Element ID should be reflected by the same change in the javascript mainJS.js . Events are bound to elements by ID. -->
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link rel="stylesheet" type="text/css" href="mainCSS.css">
+    <script src="./mainJS.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body onload="SetPage();">
+
+    <!–– Updates overlay. Opens with ShowUpdates(); and fills itself with '#Updates' content. Separate from page's flow (so any overflow would be hidden and non scrollable) ––>
+    <div class="UpdateOverlay hidden" id="UpdateOverlay"></div>
+
+    <!–– Header Div. Mainly a wrapper for its content ––>
+    <div id="Top">
+
+        <!–– leftmost flexed div ––>
+        <div id="LeftInsideTop">
+
+            <a href="./index.html"><img src="res/logo-button-final.svg" id="Logo" ></a>
+            <div class="HAalerts">Server info unavailable...</div>
+
+        </div>
+
+        <!–– center flexed div ––>
+        <div id="MiddleInsideTop">
+
+
+            <div class="personalTop">
+                <div class="Picture"><img src="./res/employee/Dan_Piano.png" style="width: 100%;" id="ProfilePicture"></div><span>Hi, &nbsp; </span>
+                <span id="ProfileName">Dan Piano</span></div>
+
+
+        </div>
+
+        <!–– rightmost flexed div ––>
+        <div id="RightInsideTop">
+
+
+            <!–– Has a set height. Overflowing alerts are hidden. ––>
+            <div class="Updates" id="Updates">
+                
+            </div>
+
+            <!–– Show More div, when clicked opens the updates overlay ––>
+            <div class="HeaderRightBottom">
+
+
+                <div id="More">More...</div>
+                <!–– Burger Button is in the flex flow. -–>
+                <div id="BurgerButton"><img id="BurgerImage" src="res/BurgerButton.svg"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!–– End of Header div ––>
+
+
+
+    <!–– Profile overlay's div. Set before Widget's div so it doesn't move with Widget Menu's div's opening and closing. Move all the Profile overlay's code block after the Widget Menu's code block to have Profile overlay's div flow with the widget's div closing or opening ––>
+    <div id="ProfileMenu" class="ProfileMenu ProfileHidden">
+        <div id="MyProfileTitle" style="margin-right: 4rem;"><b>My Profile</b></div>
+
+        <div id="saveButton" class="saveAndCancelButtons displayNone">save</div>
+        <div id="cancelButton" class="saveAndCancelButtons displayNone">cancel</div>
+        <img class="CloserCross CloserCrossAligner" id="ProfileCrossCloser" src="res/croix.png">
+        <br><br><br><br>
+
+        <div id="MyProfileContent">
+
+            <div id="PictureAndName">
+                <div>
+
+                    <div class="InProfilePictureContainer">
+                        <div class="Picture"><img id="InProfilePicture" src="./res/employee/Dan_Piano.png"></div>
+                    </div>
+                    <br><span class="ProfileName">Dan Piano</span>
+
+                </div>
+
+                <div class="InProfileUploadContainer">
+                    <b><span style="cursor: pointer;" id="InProfileUpload">Upload new photo ID </span></b>
+                </div>
+
+            </div>
+
+            <br><br><br><br>
+
+            <span class="ProfileCategory"><b>Office</b></span>
+
+            <br><br>
+
+            <span class="Prefield">Phone </span><br>
+            <div class="profileFormLayout">
+
+                <div class="profileFormLeft">
+                    <span class="PhoneField" id="OfficeMobileNumber" data-valid="true" data-haschanged="false" contenteditable=false></span>
+
+                </div>
+                <div class="profileFormRight">
+
+                    <img id="CheckMarkOfficeMobileNumber" class="ValidImage displayNone" src="res/valid.png"><a href="#" class="editButton" id="editButtonOfficeMobileNumber">edit</a>
+
+                </div>
+            </div>
+            <br><br>
+
+
+            <span class="Prefield">Address</span> <br>
+            <div class="profileFormLayout">
+
+                <div class="profileFormLeft">
+                    <span style="display: inline-block;" id="StreetOfficeAddress">45</span> <span style="display: inline-block;" id="StreetOfficeAddress">Strawberry Field Avenue</span>
+                    <br><span style="display: inline-block;" id="CityOfficeAddress">Grover Beach</span>
+                    <br> <span style="display: inline-block;" is="StateOfficeAddress">CA</span> <span style="display: inline-block;" id="ZipCodeOfficeAddress">93483</span>
+                </div>
+
+                <div class="profileFormRight">
+
+                    <img id="CheckMarkOfficeAddress" class="ValidImage displayNone" src="res/valid.png"> <a href="#" class="editButton" id="editButtonOfficeAddress">edit</a>
+                </div>
+            </div>
+
+            <br><br><br>
+
+            <span class="ProfileCategory"><b>Home</b></span>
+
+            <br><br>
+
+
+            <div class="profileFormLayout">
+
+                <div class="profileFormLeft">
+                    <span class="Prefield">Phone</span>
+                    <br>
+                    <span class="PhoneField" id="HomeMobileNumber" data-valid="true" data-haschanged="false" contenteditable=false></span>
+                </div>
+                <div class="profileFormRight">
+
+                </div>
+
+            </div>
+            <br><br>
+            <div class="profileFormLayout">
+
+                <div class="profileFormLeft">
+                    <span class="Prefield">Address</span> <br>
+                    <span style="display: inline-block;" id="NumberHomeAddress">45</span> <span style="display: inline-block;" id="StreetHomeAddress">Strawberry Field Avenue</span>
+                    <br><span style="display: inline-block;" id="CityHomeAddress">Grover Beach</span>
+                    <br> <span style="display: inline-block;" is="StateHomeAddress">CA</span> <span style="display: inline-block;" id="ZipCodeHomeAddress">93483</span>
+                </div>
+
+                <div class="profileFormRight">
+
+                </div>
+
+            </div>
+
+            <br><br><br>
+
+            <span class="ProfileCategory"><b>My HA equipment</b></span>
+
+            <br><br> 1 Dell Optiplex 7010-HA 15043
+            <br> 2 Dell Monitors
+            <br> 1 Dell Keyboard
+
+        </div>
+
+    </div>
+
+    <!–– End of profile overlay ––>
+
+    <!–– Wiget Menu's div. Toggles display with "ToggleWidgetMenu();". Pushes next elements when opened. ––>
+
+    <div class="WidgetMenuContainer">
+        <div class="WidgetMenu HideWidgetMenu" id="WidgetMenu">
+
+            <img class="WidgetButton" src="res/SVG/Outlook.svg">
+            <img class="WidgetButton" src="res/SVG/Slo%20Intranet.svg">
+            <img class="WidgetButton" src="res/SVG/eForms.svg">
+            <img class="WidgetButton" src="res/SVG/Policies.svg">
+            <img class="WidgetButton" id="my-staff" src="res/SVG/My%20Staff.svg">
+            <img class="WidgetButton" src="res/SVG/HA.svg">
+            <img class="WidgetButton" src="res/SVG/People.svg">
+            <img class="WidgetButton" src="res/SVG/County%20Website.svg">
+            <img class="WidgetButton" src="res/SVG/Internet.svg">
+            <img class="WidgetButton" id="dashboard" src="res/SVG/Dashboard.svg">
+            <img class="WidgetButton" src="res/SVG/Service%20Desk.svg">
+            <img class="WidgetButton" src="res/SVG/Timesheet.svg">
+
+        </div>
+    </div>
+    <!–– End of Widget Menu div ––>
+
+    <!–– Main Content wrapper, ensures the page's flow ––>
+
+    <div class="MainContentWrapper" id="MainContentWrapper">
+
+
+    </div>
+    <!–– End of Main Content's wrapper ––>
+
+
+    <!–– Footer div. Currently set to bottom of body. Can have its position changed from absolute to fixed so it's always displayed at the bottom and never disappears. Its z-index is above every other divs. ––>
+    <div class="footer">
+        @ 2018 County of San Luis Obispo Health Agency. All Rights Reserved.
+
+    </div>
+
+</body>

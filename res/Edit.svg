@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66">
+  <defs>
+    <style>
+      .\30 6ec7156-d6b7-40d7-ba91-01122177fc17 {
+        fill: #0a3c5f;
+      }
+
+      .\30 403285f-45f3-420d-8eae-2b26daef043a {
+        fill: none;
+        stroke: #0a3c5f;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <title>Edit</title>
+  <g id="107767bf-265e-44ba-8fdf-54dc3529aab1" data-name="Layer 2">
+    <g id="14df9a2d-d490-4599-9fe1-733ed5707a43" data-name="Layer 1">
+      <g>
+        <g>
+          <polygon class="06ec7156-d6b7-40d7-ba91-01122177fc17" points="19.94 56.66 13.86 52.37 38.36 18.47 44.45 22.76 19.94 56.66"/>
+          <path class="06ec7156-d6b7-40d7-ba91-01122177fc17" d="M42.26,19.7l-3-2.15,5.72-4.73,3.83-3.17a.64.64,0,0,1,1,.72L48,15l-2.67,6.88Z"/>
+        </g>
+        <circle class="0403285f-45f3-420d-8eae-2b26daef043a" cx="33" cy="33" r="31.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

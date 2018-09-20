@@ -1,0 +1,1009 @@
+#Top{
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    display:  inline-flex;
+    background-color: #0a3c5f;
+    min-width: 100%;
+    padding-bottom: 0.9rem;
+    padding-top: 0.5rem; 
+    padding-left: 50px;
+    padding-right: 10px;
+    font-size: 1rem;
+    height: 12rem;
+    border-bottom: solid 1px #00123f;
+    z-index: 1;
+    flex-direction:row;
+    justify-content: space-between;
+    color: white;
+
+}
+
+
+
+#Logo{
+    
+    height: 5.8rem; 
+    width: 21rem;
+    align-self: flex-start;
+    overflow: visible;
+}
+
+.Picture {
+    border-radius: 50%;
+    width: 4.4rem;
+  margin-right: 1rem;
+    cursor: pointer;
+    overflow: hidden;
+    flex-basis: 4.4rem;
+    min-width: 4.4rem;
+}
+
+#LeftInsideTop{   
+    display: flex;
+ 
+ min-width: 21rem;
+  max-width: 37%;
+  flex-basis: 37%;
+flex-grow: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 3rem;
+    overflow: visible;
+    
+}
+
+#MiddleInsideTop{
+    min-width: 12.5rem;
+     flex-basis: 28%;
+    flex-grow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 3rem;
+    white-space: nowrap;
+}
+
+#RightInsideTop{
+     flex-basis: 25%;
+    flex-grow: auto;
+display: block;
+min-width: 15.5rem;
+
+     overflow: visible;
+
+}
+
+#More{
+    
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+#BurgerButton{
+    
+  
+    transition: transform 0.35s;
+    
+}
+
+#BurgerImage{
+    
+    width: 2rem;
+    
+}
+
+#BurgerImage:hover{
+    
+ cursor: pointer;
+    
+}
+
+
+.ButtonTurned{
+    
+    transform: rotate(-180deg);
+    
+}
+
+
+.lialert{
+    
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    max-width: 100%:
+    
+}
+
+
+
+.liinfo{
+    
+    display: inline-flex;
+    align-items: flex-start;
+    margin-bottom: 6px;
+      max-width: 100%:
+}
+
+.lialert::before{
+    
+    content:url('res/alert.svg')  ; 
+    width: 0.5rem;
+     display:block;
+     flex-basis: 25px;
+ align-self: flex-start;
+     flex-grow: auto;
+     min-width: 25px;
+    transform: translateY(2px);
+}
+
+
+.liinfo::before{
+    
+    content:url('res/info.svg')  ;
+ width: 0.5rem;
+    display:block;
+ align-self: flex-start;
+    min-width: 25px;
+    flex-basis: 25px;
+    flex-grow: auto;
+  
+        transform: translateY(2px);
+}
+
+
+
+html, body {
+    
+    margin:0px;
+    font-family: 'Open Sans', sans-serif;
+  
+}
+
+
+body{
+    
+    position:relative;
+
+    padding-bottom: 4rem;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+.ImportantAlert{
+    
+      flex : 1 1 0;
+font-weight: 600;
+    font-size: 0.9rem;
+    
+       font-family: 'Open Sans', sans-serif;
+}
+
+.HAalerts{
+    
+
+
+    font-size: 0.85rem;
+   font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.03575rem;
+}
+
+
+
+.personalTop{
+    
+    display:flex;
+    align-items: center;
+  height: 100%;
+    
+}
+
+
+.Updates{
+    
+    display:block;
+ 
+   
+    overflow: hidden;
+    height: 80%;
+
+    
+}
+
+
+.Updates:hover{
+    
+    cursor: pointer;
+    
+}
+
+
+.HeaderRightBottom{
+    
+    display: flex; 
+    
+    height: 20%; color: white; justify-content:space-between;
+    align-items: flex-end; 
+    
+}
+
+
+.ShowMore:hover{
+    
+    cursor: pointer;
+    
+}
+
+
+.UpdateOverlay{
+    
+    display: inline-block;
+    z-index: 10;
+    position: absolute;
+    width: 50%;
+    padding-bottom: 100px;
+    left: 25%;
+    top:5%;
+    background-color: whitesmoke;
+    color: black;
+    padding-top: 50px;
+    padding-left: 50px;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.35s ease-in-out;
+
+}
+
+
+.CloserCross{
+    
+    z-index: 6;
+    position: absolute;
+    top: 0.3rem;
+    right:0.3rem;
+    
+}
+
+.CloserCrossAligner{
+    top: 0.9rem;
+    right:0.9rem;
+    
+    
+}
+
+
+.CloserCross:hover{
+    
+  cursor: pointer;
+    
+}
+
+.CloserText{
+    
+    z-index: 6;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    
+}
+
+
+.CloserText:hover{
+    
+  cursor: pointer;
+    
+}
+
+
+.WidgetMenu{
+    z-index: 1;
+     width: 1650px;
+    margin: auto;    
+    border-bottom: 1px solid #cbcbcb;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+    
+}
+
+.WidgetButton{
+    
+  width: 200px;
+        padding: 18px;
+     
+        transition: opacity 0.2s;
+}
+
+.WidgetMenuContainer{
+    display: flex;
+    background-color: #dcdcdc;
+    width: 100%;
+}
+
+
+
+.HideWidgetMenu{
+ 
+    display: flex;
+    height: 0px;
+    border-bottom: 0px;
+    overflow: hidden;
+    
+}
+
+@media (max-width:2560px){
+    
+    .WidgetMenu{
+    width: 1350px;
+   
+     
+   
+    }
+}
+
+
+@media (max-width:2560px){
+    
+    .WidgetMenu{
+    width: 1150px;
+   
+     
+   
+    }
+}
+
+    
+
+
+@media (max-width:1920px){
+    
+    .WidgetMenu{
+    width: 1000px;
+   
+     
+   
+    }
+}
+
+@media (max-width:1600px){
+    
+    .WidgetMenu{
+    width: 900px;
+   
+     
+   
+    }
+}
+
+
+@media (max-width:1280px){
+    
+    .WidgetMenu{
+    width: 850px;
+   
+     
+   
+    }
+}
+
+
+
+@media (max-width:2560px){
+    
+    .WidgetButton{
+        
+        width: 160px;
+        padding: 15px;
+   
+    }
+}
+
+
+@media (max-width:1920px){
+    
+    .WidgetButton{
+        
+        width: 140px;
+        padding: 12px;
+   
+    }
+}
+
+
+@media (max-width:1600px){
+    
+    .WidgetButton{
+        
+        width: 120px;
+        padding: 12px;
+   
+    }
+}
+
+@media (max-width:1280px){
+    
+    .WidgetButton{
+        
+        width: 110px;
+        padding: 12px;
+   
+    }
+}
+
+
+
+.WidgetButton:hover{
+    
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+
+.footer {
+    
+    z-index: 10;
+    position: fixed;
+    font-size: 0.7rem;
+    display: flex;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0.15rem;
+    color: white;
+    background-color: #0a3c5f;
+    padding-left: 5rem;
+    border-top: solid 1px #00123f;
+    
+}
+
+
+.MainContentWrapper{
+    
+    position:relative;
+    display: inline-block;
+    width: 100%;
+
+    
+}
+
+
+.MainContent{
+    
+    position: relative;
+    margin-left: 8%;
+    margin-right:8%;
+    width: 86%;
+    margin-top : 2rem;
+    padding : 1rem;
+
+    
+}
+
+.InProfileUploadContainer{
+    
+    align-self: flex-end; 
+    
+    color: #0a3c5f;
+}
+
+
+.ProfileMenu{
+    
+    position:absolute;
+    left: 0;
+    z-index: 7;
+    width: 32rem;
+    background-color: #cccccc;  
+    border-bottom-right-radius: 8rem;
+    padding-top: 1rem;
+    padding-bottom: 5rem;
+    padding-right: 2rem;   
+    transition: left 0.75s ease-in-out;
+    
+}
+
+.SaveCantSave{
+    
+    display:inline-block;
+    padding-left: 1.5rem;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    
+}
+
+.noOpacity{
+    
+    opacity : 0;
+}
+
+
+.hidden{
+    
+    visibility: hidden;
+    opacity: 0;
+
+}
+
+.ProfileHidden{
+    
+    left : -36rem;
+    
+}
+
+.PhoneField{
+    
+    min-width: 8rem;
+    max-width : 8rem;
+    display: inline-block;
+}
+
+.TextBorder{
+    
+        border: 1px solid #aaa;
+}
+.Prefield{
+    
+    color: #777;
+    font-size: 95%;
+    padding-right: 1rem;
+    
+}
+
+.ValidImage{
+    width: 1rem;
+    display: block;
+    padding-left: 1rem;
+  align-self: flex-start; 
+    
+}
+
+.ProfileCategory{
+    
+   color: #0a3c5f; 
+   font-size: 1.1rem; 
+}
+
+.ProfileName{
+    display: block;
+color: #0a3c5f;
+
+    
+}
+#MyProfileTitle{
+    
+    border-bottom: 1px solid #999999; 
+    padding-bottom: 0.2rem; 
+    color:#0a3c5f;
+    font-size: 1.2rem;
+    text-align: right;
+    padding-left: 6rem;
+    display: inline-block;
+    
+}
+#InProfilePicture{
+    
+    width: 100%;
+}
+.InProfilePictureContainer{
+    
+    display: flex; 
+    justify-content: center;
+    align-content: center; 
+    cursor: pointer;
+}
+
+#MyProfileContent{
+    
+    display: block;
+    padding-left: 6rem;
+    padding-right: 4rem;
+
+    
+}
+
+
+#PictureAndName{
+    
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-content:center;
+    
+}
+
+.profileFormLayout{
+    
+    width: 100%; 
+    display: flex;
+    align-self: center;
+}
+
+.profileFormLeft{
+    flex-basis: 15rem;
+    min-width: 15rem;
+    display: block;
+
+}
+
+.profileFormRight{
+      flex-grow: 1;
+    
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+  
+    
+}
+
+.saveAndCancelButtons{
+   
+    display: inline-flex;
+    padding-left: 1rem;
+    padding-right:1rem;
+padding-bottom: 0.2rem;
+    justify-content: center;
+    border-radius: 1rem 1rem 1rem 1rem;
+    background-color: whitesmoke;
+    cursor: pointer;
+    
+    
+}
+
+.cancelForm{
+    
+    display: inline-block;
+    font-style: italic;
+    font-weight: 600;
+    border-bottom: 1px dotted black;
+    cursor: pointer;
+    margin-left: 1rem;
+    
+}
+
+#saveButton{
+    font-size: 110%;
+    font-weight: 600;
+    margin-right: 2rem;
+}
+
+#cancelButton{
+  
+    
+}
+
+
+.displayNone{
+    
+    visibility: hidden;
+}
+
+.StaffContainer {
+    position: relative;
+  display: inline-block;
+    width: 100%;
+    padding-bottom: 12rem;
+}
+
+
+.rightStaffContainer{
+    position: absolute;
+    display:block;
+    left : 50%;
+    top: 0;
+    width: 40%;
+   height: 960px;
+    padding-right: 5rem;
+    padding-bottom: 2rem;
+    color: black;
+    will-change: transform;  
+ 
+    
+}
+
+
+@media (max-width:2560px){
+    
+    .rightStaffContainer{
+  
+   
+     height: 960px;
+   
+    }
+}
+
+@media (max-width:1920px){
+    
+    .rightStaffContainer{
+   
+   
+     height: 860px;
+   
+    }
+}
+
+
+@media (max-width:1600px){
+    
+    .rightStaffContainer{
+    left : 42.6rem;
+   
+     height: 720px;
+   
+    }
+}
+
+
+@media (max-width:1280px){
+    
+    .rightStaffContainer{
+    left : 42.6rem;
+   
+     height: 600px;
+   
+    }
+}
+
+
+
+.rightStaff {
+    z-index: 0;
+    position: fixed;
+    display: flex;
+    width: 40%;
+    overflow: auto;
+    flex-direction:column;
+    justify-content: space-between;
+    border-left: 1px solid #cccccc;
+    height: 960px;
+    padding-left: 5rem;
+ 
+  scrollbar-base-color: #fff;
+  scrollbar-face-color: #bbb;
+  scrollbar-3dlight-color: #fff;
+  scrollbar-highlight-color: #fff;
+  scrollbar-track-color: #fff;
+  scrollbar-arrow-color: #fff;
+  scrollbar-shadow-color: #fff;
+  scrollbar-dark-shadow-color: #fff;
+ -ms-overflow-style:-ms-autohiding-scrollbar;
+ -ms-scroll-chaining:none;
+
+}
+
+
+@media (max-width:2560px){
+    
+    .rightStaff{
+  
+   
+     height: 960px;
+   
+    }
+}
+
+@media (max-width:1920px){
+    
+    .rightStaff{
+   
+   
+     height: 860px;
+   
+    }
+}
+
+
+@media (max-width:1600px){
+    
+    .rightStaff{
+    left : 42.6rem;
+   
+     height: 720px;
+   
+    }
+}
+
+
+@media (max-width:1280px){
+    
+    .rightStaff{
+    left : 42.6rem;
+   
+     height: 600px;
+   
+    }
+}
+
+
+.FillPerson{
+    display: block;
+    flex : 1 0 30%;
+}
+
+.FillInfo{
+    display: block;
+    flex : 2;
+    
+}
+
+.rightStaffShown{
+    
+       padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.title{
+    
+    padding-top: 2.5rem;
+    border-bottom: 1px solid #0a3c5f; 
+    padding-bottom: 0.8rem; 
+    color:#0a3c5f;
+    font-size: 1.40rem;
+    font-weight: 600;
+    text-align: right;
+    padding-left: 30rem;
+    display: inline-block;
+    
+}
+
+.divTestblue{
+    background-color: skyblue;
+    height: 5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    
+}
+
+.divTestpink{
+    
+    background-color: hotpink;
+       height: 5rem;
+        padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+.leftStaff {
+  display: inline-block;
+    width: 50%;
+min-width:35rem;
+padding-left: 20%;
+    padding-top: 2rem;
+   
+ 
+}
+
+.personOfStaff{
+    display: flex;
+    width: 40rem;
+    margin-top: 4rem;
+
+    height: 7rem;
+   
+    
+        
+}
+
+.personInfos{
+    display: block;
+     border-bottom: 1px solid #0a3c5f;
+    margin-left: 8rem;
+    padding-left: 8.40rem;
+    width: 23.6rem;
+
+}
+
+.StaffPicturalContainer{
+    display: inline-flex;
+    flex: 0 0 10rem;
+    height: 100%;
+    width: 10rem;
+    justify-content:space-between;
+}
+
+
+.StaffAlertButton{
+    display: block;
+  align-self: center;
+    width: 0.8rem;
+    height: 0.8rem;
+margin-bottom: 4.5rem;
+   
+}
+
+.StaffPictureContainer{
+    display: block;
+  align-self: center;
+    height: 6rem;
+    width: 6rem;       
+   margin-bottom: 2rem;
+      border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+ 
+}
+
+.StaffInfoInList{
+    flex: 1 0 0;
+    display: flex;
+    width: 28rem;
+    height: 90%;
+    justify-content: space-between;
+    padding-left: 8rem;
+
+       
+ transform: translateX(-1.5rem);
+    
+    
+}
+.StaffInfoInListWrapper{
+    
+    display: inline-block;
+  
+}
+
+.moreStaffInfo{
+    
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    align-self: flex-end;
+    
+}
+.StaffFulLname{
+    color:  #0a3c5f;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.StaffPosition{
+    
+    color:#222222;
+    font-size: 0.9rem;
+}
+
+
+.editButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+	background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+	background-color:#f9f9f9;
+	-moz-border-radius:9px;
+	-webkit-border-radius:9px;
+	border-radius:9px;
+	border:1px solid #cccccc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:'Open Sans', sans-serif;
+	font-size:0.9rem;
+	font-weight:bold;
+	padding:0px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+    margin-left: 2rem;
+}
+.editButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+	background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+	background-color:#e9e9e9;
+}
+.editButton:active {
+	position:relative;
+	top:1px;
+}
